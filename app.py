@@ -6,7 +6,7 @@ model = YOLO("best.pt")
 
 def detect(frame):
     # frame llega como numpy array (RGB) desde la webcam del navegador
-    results = model(frame)
+    results = model(frame, conf=0.7)
     annotated = results[0].plot()
     return annotated
 
